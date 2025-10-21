@@ -37,14 +37,6 @@ data:
     server.0=zookeeper-0.zookeeper-headless.thingsboard.svc.cluster.local:2888:3888;2181
     server.1=zookeeper-1.zookeeper-headless.thingsboard.svc.cluster.local:2888:3888;2181
     server.2=zookeeper-2.zookeeper-headless.thingsboard.svc.cluster.local:2888:3888;2181
-  log4j.properties: |+
-    zookeeper.root.logger=INFO, CONSOLE
-    zookeeper.console.threshold=INFO
-    log4j.rootLogger=${zookeeper.root.logger}
-    log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
-    log4j.appender.CONSOLE.Threshold=${zookeeper.console.threshold}
-    log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
-    log4j.appender.CONSOLE.layout.ConversionPattern=%d{ISO8601} [myid:%X{myid}] - %-5p [%t:%C{1}@%L] - %m%n
 ---
 apiVersion: apps/v1
 kind: StatefulSet
